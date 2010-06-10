@@ -23,6 +23,7 @@ pylons, turbogears, web.py, etc) могут написать своё прило
 
 ## Установка
 
+ 1. Если на сервере стоит python 2.5 или ниже, надо установить python-lxml
  1. Снимаем mercurial-репозиторий,
  1. делаем симлинк директории onpay в site-packages,
  1. прописываем `onpay` в `INSTALLED_APPS`,

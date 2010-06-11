@@ -6,15 +6,15 @@ from onpay.conf import get_constant
 
 refilled_balance = Signal(providing_args=["user", "sum"])
 
-def update_balance(sender, signal, user, sum):
+def update_balance(sender, **kw):
     "Пример пополнения баланса"
-    user.footman_profile.money += sum
-    user.footman_profile.save()
+    kw['user'].footman_profile.money += kw['sum']
+    kw['user'].footman_profile.save()
 
-def email_notification(sender, signal, user, sum):
+def email_notification(sender, **kw):
     mail_managers(
-        subject=u"Money from %s" % user.username,
-        message=u"Balance refilled for %s RUR" % sum,
+        subject=u"Money from %s" % kw['user'].username,
+        message=u"Balance refilled for %s RUR" % ['sum'],
     )
 
 if get_constant("enable_footman_update_balance"):

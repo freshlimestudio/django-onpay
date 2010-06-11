@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic.simple import direct_to_template
+from django.core.mail import mail_admins
 
 import onpay.forms
 import onpay.models
@@ -39,6 +40,8 @@ def process_first_step(request, template_name="onpay/form.html",
 
 
 def onpay_pay(request):
+    if get_constant("debug"):
+        mail_admins(subject=u"Pay query", message=unicode(dict(request.POST)))
     form = onpay.forms.OnpayPayForm(request.POST)
     if not form.is_valid():
         return HttpResponse(answerpay_dict(request.POST, 12,

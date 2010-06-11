@@ -14,7 +14,7 @@ def update_balance(sender, **kw):
 def email_notification(sender, **kw):
     mail_managers(
         subject=u"Money from %s" % kw['user'].username,
-        message=u"Balance refilled for %s RUR" % ['sum'],
+        message=u"Balance refilled for %s RUR" % kw['sum'],
     )
 
 if get_constant("enable_footman_update_balance"):

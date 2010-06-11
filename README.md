@@ -106,4 +106,4 @@ pylons, turbogears, web.py, etc) могут написать своё прило
 
 Автор: Денис Бурый <denger@footter.com>
 
-Лицензия: BSD
+Лицензия: MIT

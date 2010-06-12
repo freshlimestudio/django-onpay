@@ -62,7 +62,7 @@ def onpay_pay(request):
             ) if get_constant('use_balance_table', True) else True
         # устанавливаем статус операции как оплаченную
         rezult_operation = onpay.models.Operation.objects.filter(
-                id=form.cleaned_data['pay_for']).update(status=1)
+                id=form.cleaned_data['pay_for']).update(status=1, sum=form.cleaned_data['order_amount'])
         # если оба запроса прошли успешно выдаем ответ об удаче,
         # если нет, то о том что операция не произошла
         if rezult_operation and rezult_balance:

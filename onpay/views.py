@@ -78,7 +78,7 @@ def onpay_pay(request):
 @csrf_exempt
 def process_api_request(request):
     if (request.REQUEST['type'] == 'check'):
-        return HttpResponse(answer_dict(request.POST, 0, 'OK'))
+        return HttpResponse(answer_dict(request.REQUEST, 0, 'OK'))
     if (request.REQUEST['type'] == 'pay'):
         return onpay_pay(request)
     return HttpResponse('')

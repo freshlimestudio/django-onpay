@@ -1,4 +1,10 @@
 # coding: UTF-8
+"""\
+Модели для django-onpay
+
+Интернационализации нет, так как сам onpay проект русский и я расчитываю,
+что прикручивать его будут тоже русские программисты.
+"""
 from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import User

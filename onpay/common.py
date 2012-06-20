@@ -51,14 +51,14 @@ class IframeGenerator(object):
 
     def md5check (self, summ, operation_id):
         return md5(";".join(
-            (self.pay_mode, str(summ), self.currency, str(operation_id),
+            (self.pay_mode, "%.1f" % summ, self.currency, str(operation_id),
             self.convert, self.private_code,))).hexdigest().upper()
 
     def set_f(self, f):
         "Определение ширины и высоты в зависимости от текущего скина"
         self.f = f
         self.width, self.height = {
-            None: ( 300, 500),
+            None: ( "99%", 1100),
             1:    (1020, 660),
             2:    ( 250, 540),
             3:    ( 960, 800),

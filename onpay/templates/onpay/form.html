@@ -3,12 +3,12 @@
 После ввода суммы появится окно с запросом ввода платежной системы
 и другими параметрами</p>
 
-<form method="post" action="">
+<form method="post" action="">{% csrf_token %}
 <table>
 {{ form }}
 <tr>
     <td>&nbsp;</td>
-    <td><input type="submit" /></td>
+    <td><input type="submit" value="Оплатить"/></td>
 </tr>
 </table>
 </form>

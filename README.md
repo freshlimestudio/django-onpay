@@ -67,6 +67,7 @@ API IN:
     ONPAY = {
         'onpay_login': 'example',      # Ваш логин на onpay
         'private_code': 'ksjgJskLJds', # Пароль, который вы ввели на сайте onpay
+        'new_operation_status': 0, #По умолчанию нужно
     }
 
 Необязательные параметры:
